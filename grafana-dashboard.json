@@ -38,8 +38,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "#EAB839",
@@ -56,8 +55,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
-        "w": 5,
+        "h": 8,
+        "w": 6,
         "x": 0,
         "y": 0
       },
@@ -87,7 +86,7 @@
           "editorMode": "code",
           "expr": "raspberry_pi_cpu_temperature",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -112,8 +111,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "purple",
-                "value": null
+                "color": "purple"
               },
               {
                 "color": "blue",
@@ -138,9 +136,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
-        "w": 5,
-        "x": 5,
+        "h": 8,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 4,
@@ -167,15 +165,81 @@
             "uid": "fdg5d4d773htse"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "raspberry_pi_core_voltage",
+          "format": "time_series",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
       ],
       "title": "Voltage",
       "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fdg5d4d773htse"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0-pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "fdg5d4d773htse"
+          },
+          "editorMode": "code",
+          "expr": "raspberry_pi_uptime_seconds",
+          "instant": false,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Uptime",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -226,8 +290,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "#EAB839",
@@ -247,7 +310,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 8
       },
       "id": 1,
       "options": {
@@ -271,7 +334,7 @@
           "editorMode": "code",
           "expr": "raspberry_pi_cpu_temperature",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -323,13 +386,12 @@
           },
           "mappings": [],
           "max": 3.5,
-          "min": 1,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "purple",
-                "value": null
+                "color": "purple"
               },
               {
                 "color": "blue",
@@ -357,7 +419,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 19
       },
       "id": 2,
       "options": {
@@ -381,7 +443,7 @@
           "editorMode": "code",
           "expr": "raspberry_pi_core_voltage",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -437,8 +499,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "light-green",
@@ -458,7 +519,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 28
       },
       "id": 5,
       "options": {
@@ -482,7 +543,7 @@
           "editorMode": "code",
           "expr": "raspberry_pi_uptime_seconds",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -498,13 +559,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "pi metrics",
   "uid": "ddg5egiex8wlce",
-  "version": 5,
+  "version": 7,
   "weekStart": ""
 }
